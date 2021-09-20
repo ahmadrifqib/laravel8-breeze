@@ -17,6 +17,7 @@ class TimelineController extends Controller
         // $statuses = Status::whereIn('user_id', $following)->orWhere('user_id', Auth::user()->id)->latest()->get();
         // $statuses = Auth::user()->statuses;
         $statuses = Auth::user()->timeline();
+        // return $statuses;
         // dd($statuses);
         return view('timeline', compact('statuses'));
     }
